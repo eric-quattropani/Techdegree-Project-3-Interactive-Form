@@ -6,6 +6,7 @@ const jobroleElement = document.querySelector("#title");
 const otherjobroleElement = document.querySelector("#other-job-role");
 otherjobroleElement.style.display = "none";
 
+
 //4. "Job Role" section
 //conditional that displays and hides the Other Job Role text field when someone selects Other in the Job Role dropdown menu.
 jobroleElement.addEventListener("change", (e) => {
@@ -15,6 +16,7 @@ jobroleElement.addEventListener("change", (e) => {
         otherjobroleElement.style.display = "none";
     }
 });
+
 
 //5. "T-Shirt info" section
 const designElement = document.querySelector("#design");
@@ -51,6 +53,7 @@ designElement.addEventListener("change", (e) => {
 
 });
 
+
 //6. "Register for Activities" section
 let registerActivities = document.querySelector("#activities");
 let total = document.querySelector("#activities-cost");
@@ -67,8 +70,6 @@ registerActivities.addEventListener("change", (e) => {
     }
     total.innerHTML = `Total: $${totalCost}`;
 });
-
-
 
 
 //7. "Payment Info" section
@@ -98,6 +99,7 @@ paymentMenu.addEventListener ('change', (e) => {
         paypal.style.display= "none";
     }
 });
+
 
 //8. Form Validation
 const emailAddress = document.querySelector("#email");
@@ -180,7 +182,6 @@ function validCvv() {
     } return cvvTest;
 };
 
-
 form.addEventListener('submit', (e) => {
     if (!validName()) {
         e.preventDefault();
@@ -192,13 +193,9 @@ form.addEventListener('submit', (e) => {
     if (paymentMenu.value === 'credit-card') {
         if (!validCard()) {
             e.preventDefault();
-        }
-
-        if (!validCvv()) {
+        } if (!validCvv()) {
             e.preventDefault();
-        }
-
-        if (!validZipCode()) {
+        } if (!validZipCode()) {
             e.preventDefault();
         }
     }
